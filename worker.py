@@ -103,13 +103,13 @@ def text_to_speech(text, voice=""):
 def watsonx_process_message(user_message):
     # Set the prompt for Watsonx API - using a strict translation instruction
     #prompt = f"""Respond to the query: ```{user_message}```"""
-     prompt = f"""
-    Translate the following English sentence into Spanish. 
-    Reply ONLY with the translation, no explanations, no formatting, no extra text.
+    prompt = f"""
+      Translate the following English sentence into Spanish. 
+      Reply ONLY with the translation, no explanations, no formatting, no extra text.
 
-    English: {user_message}
-    Spanish:
-    """
+      English: {user_message}
+      Spanish:
+      """
     response_text = model.generate_text(prompt=prompt)
     print("wastonx response:", response_text)
     return response_text.strip()
